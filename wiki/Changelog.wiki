@@ -1,11 +1,11 @@
 Changelog:
 
  - Version 1.0 alpha
-   Console UI
+   Console UI<br>
    Support Clients 7.9-8.62
 
  - Version 1.1 beta
-   Added GUI
+   Added GUI<br>
    Support Clients 7.9-8.7
 
  - Version 1.2 gamma
