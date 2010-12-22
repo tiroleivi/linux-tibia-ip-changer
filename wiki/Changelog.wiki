@@ -14,3 +14,7 @@ Changelog:
  - Version 1.3 delta
    Added auto-deteckt run Tibia Client version<br>
    Correct some little bugs
+
+ - Version 1.4 epsilon
+   Added multi-lenguage mode(languages files in ~/.linux-ip-changer/Languages)<br>
+   ip-changer must be installed(make install).
