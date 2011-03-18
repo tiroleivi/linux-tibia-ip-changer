@@ -1,0 +1,69 @@
+#!/bin/bash
+
+gpp=$"g++"
+
+if [ "$1" == "--with-gui" ]
+then
+echo "CC=g++
+CFLAGS=-O2 \$(shell wx-config --cxxflags --unicode=yes) -D__GUI__
+LDFLAGS=\$(shell wx-config --libs --unicode=yes) -D__GUI__ 
+SOURCES=main.cpp change.cpp process.cpp tibiapid.cpp gui.cpp history.cpp languages.cpp setup.cpp network.cpp
+OBJECTS=\$(SOURCES:.cpp=.o)
+EXECUTABLE=change
+
+all: \$(SOURCES) \$(EXECUTABLE)
+
+\$(EXECUTABLE): \$(OBJECTS) 
+	\$(CC) \$(LDFLAGS)\$(OBJECTS) -o \$@
+	mv *.o ./Objects
+
+.cpp.o:
+	\$(CC) -c \$< \$(CFLAGS) -o \$@
+
+clean:
+	rm -rf ./Objects/*.o \$(EXECUTABLE)
+
+install:
+	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
+	cp -R ./Languages /home/$USER/.linux-ip-changer
+
+reinstall:
+	rm -rf /usr/local/bin/\$(EXECUTABLE)
+	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
+
+uninstall:
+	rm -rf /usr/local/bin/\$(EXECUTABLE)" > Makefile
+	
+echo "Configured with GUI & Console mode!"
+else
+echo "CC=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=main.cpp change.cpp process.cpp tibiapid.cpp history.cpp
+OBJECTS=\$(SOURCES:.cpp=.o)
+EXECUTABLE=change
+
+all: \$(SOURCES) \$(EXECUTABLE)
+
+\$(EXECUTABLE): \$(OBJECTS) 
+	\$(CC) \$(LDFLAGS) \$(OBJECTS) -o \$@
+	mv *.o ./Objects
+
+.cpp.o:
+	\$(CC) \$(CFLAGS) \$< -o \$@
+
+clean:
+	rm -rf ./Objects/*.o \$(EXECUTABLE)
+
+install:
+	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
+
+reinstall:
+	rm -rf /usr/local/bin/\$(EXECUTABLE)
+	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
+
+uninstall:
+	rm -rf /usr/local/bin/\$(EXECUTABLE)" > Makefile
+	
+echo "Configured with Console mode!"
+fi
