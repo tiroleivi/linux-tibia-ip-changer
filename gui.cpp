@@ -137,7 +137,7 @@ Panel::Panel(const wxString& title)
 	SetMenuBar(menubar);
 	trayIcon = new MyTaskBarIcon(this);
 	wxIcon icon(ico_xpm);
-	if(!trayIcon->SetIcon(icon, wxT("IP Chabger")))
+	if(!trayIcon->SetIcon(icon, wxT("IP Changer")))
         wxMessageBox(wxT("Could not set icon."));
     (void) new wxButton(panel, BUTTON_CHANGE_IP, wxLang.at(10), wxPoint(60, 90), wxSize(90, 33));
     Connect(BUTTON_CHANGE_IP, wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler(Panel::PanelClickEvents));
