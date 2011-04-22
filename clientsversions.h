@@ -1,3 +1,6 @@
+#ifndef CLIENTS_H
+#define CLIENTS_H
+
 #include <string>
 
 static std::string clients[][6] = {
@@ -25,5 +28,8 @@ static std::string clients[][6] = {
 			{"861", "0x856e8a0", "0x70", "0x64", "0x83781c0", "10"},
 			{"862", "0x859b860", "0x70", "0x64", "0x837a8e0", "10"},
 			{"870", "0x85acde0", "0x70", "0x64", "0x8388480", "10"},
-			{"871", "0x85acde0", "0x70", "0x64", "0x8388420", "10"}
+			{"871", "0x85acde0", "0x70", "0x64", "0x8388420", "10"},
+			{"872", "0x85adda0", "0x70", "0x64", "0x83898c0", "10"}
 };
+
+#endif //CLIENTS_H

@@ -1,3 +1,6 @@
+#ifndef HISTORY_H
+#define HISTORY_H
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,3 +15,5 @@ public:
 	vector<string> getHistory();
 	string getUserName();
 };
+
+#endif // HISTORY_H

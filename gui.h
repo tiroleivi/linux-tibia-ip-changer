@@ -1,3 +1,6 @@
+#ifndef GUI_H
+#define GUI_H
+
 #include <wx/wx.h>
 #include <wx/taskbar.h>
 #include <wx/spinctrl.h>
@@ -68,3 +71,5 @@ public:
 	UpDialog(Panel* frame);
 	Panel* frame;
 };
+
+#endif //GUI_H

@@ -24,12 +24,8 @@ clean:
 	rm -rf ./Objects/*.o \$(EXECUTABLE)
 
 install:
-	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
+	mv \$(EXECUTABLE) /usr/local/bin
 	cp -R ./Languages /home/$USER/.linux-ip-changer
-
-reinstall:
-	rm -rf /usr/local/bin/\$(EXECUTABLE)
-	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
 
 uninstall:
 	rm -rf /usr/local/bin/\$(EXECUTABLE)" > Makefile
@@ -56,11 +52,7 @@ clean:
 	rm -rf ./Objects/*.o \$(EXECUTABLE)
 
 install:
-	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
-
-reinstall:
-	rm -rf /usr/local/bin/\$(EXECUTABLE)
-	su -c \"mv $(EXECUTABLE) /usr/local/bin\"
+	mv \$(EXECUTABLE) /usr/local/bin
 
 uninstall:
 	rm -rf /usr/local/bin/\$(EXECUTABLE)" > Makefile

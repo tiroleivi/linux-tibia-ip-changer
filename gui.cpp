@@ -162,7 +162,7 @@ void sendDialog(wxString str, long styles){
 
 void guiChangeIP(Panel *frame, int eventId){
 	TibiaPid pid;
-	int tpid;
+	int tpid = 0;
 	wxArrayString arr = pid.getTibiaPidGUI();
 	if(arr.GetCount() != 0){
 		int select = frame->process->GetCurrentSelection();
@@ -170,6 +170,14 @@ void guiChangeIP(Panel *frame, int eventId){
 			select = 0;
 		tpid = wxAtoi(arr[select]);
 	}
+	
+	if(std::string(frame->process->GetValue().mb_str()).find("Tibia") == string::npos){
+		frame->statusbar->SetStatusText(wxLang.at(29),0);
+		if(eventId == MENU_CHANGE_IP)
+			sendDialog(wxLang.at(29), wxOK | wxICON_ERROR);
+		return;
+	}
+	
 	if(tpid == 0){
 		frame->statusbar->SetStatusText(wxLang.at(16),0);
 		if(eventId == MENU_CHANGE_IP)
@@ -263,7 +271,10 @@ void Panel::PanelClickEvents(wxCommandEvent& event){
 			break;
 		}
 		case MENU_INFO:{
-			sendDialog(wxT("This program change IP tibia client in order to connect to Open Tibia Server.\nContinue Moraxus project.\nLicense: GNU GPL\nProgrammer: Miziak.\nAdress Finder: Virtelio.\nWrote in wxWidgets library."), wxOK);
+			wxString ver(ACTUALVERSION, wxConvUTF8);
+			wxString code_name(CODENAME, wxConvUTF8);
+			wxString info = wxT("This program change IP tibia client in order to connect to Open Tibia Server.\nContinue Moraxus project.\nLicense: GNU GPL\nVersion: ") + ver + wxT(" ") + code_name + wxT("\nProgrammer: Miziak.\nAdress Finder: Virtelio.\nWrote in wxWidgets library.");
+			sendDialog(info, wxOK);
 			break;
 		}
 		case wxID_SETUP:{
