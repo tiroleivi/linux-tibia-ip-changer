@@ -1,3 +1,6 @@
+#ifndef PID_H
+#define PID_H
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -16,3 +19,5 @@ public:
 	wxArrayString getTibiaPidGUI();
 #endif
 };
+
+#endif //PID_H

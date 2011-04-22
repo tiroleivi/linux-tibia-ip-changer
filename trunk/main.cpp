@@ -10,6 +10,7 @@
 #include "change.h"
 #include "tibiapid.h"
 #include "clientsversions.h"
+#include "network.h"
 
 TibiaPid pid;
 using namespace std;
@@ -25,7 +26,7 @@ void usage(string w){
 		cout<<"     "<<str<<endl<<"     change -h This commond display this help page."<<endl;
 	}
 	else if(w == "v")
-		cout<<"Version 1.5 dzeta"<<endl;
+		cout<<"Version "<<ACTUALVERSION<<" "<<CODENAME<<endl;
 }
 
 int main(int argc, char **argv)

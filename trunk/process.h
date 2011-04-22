@@ -16,4 +16,4 @@ public:
     std::string readClientVersion(unsigned addr);
 };
 
-#endif // PROCESS_H
+#endif //PROCESS_H

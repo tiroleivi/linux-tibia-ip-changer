@@ -9,7 +9,8 @@
 #include <string.h>
 
 #define GOOGLECODE "code.google.com"
-#define ACTUALVERSION "1.5"
+#define ACTUALVERSION "1.6"
+#define CODENAME "eta"
 
 class Network
 {

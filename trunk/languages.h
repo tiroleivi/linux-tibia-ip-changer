@@ -1,3 +1,6 @@
+#ifndef LANGUAGES_H
+#define LANGUAGES_H
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,3 +17,5 @@ public:
 	vector<string> getLanguagesList();
 	int count;
 };
+
+#endif //LANGUAGES_H

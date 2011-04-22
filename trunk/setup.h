@@ -1,3 +1,6 @@
+#ifndef SETUP_H
+#define SETUP_H
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,3 +15,5 @@ public:
 	bool saveSetup(string, string);
 	string loadSetupValue(string);
 };
+
+#endif //SETUP_H

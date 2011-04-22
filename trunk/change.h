@@ -1,3 +1,6 @@
+#ifndef CHANGE_H
+#define CHANGE_H
+
 #include <fstream>
 #include <sstream>
 #include <cstring>
@@ -18,3 +21,5 @@ public:
     bool changeIP(std::string, int, std::string);
     bool isCorrectVersion(std::string);
 };
+
+#endif // CHANGE_H

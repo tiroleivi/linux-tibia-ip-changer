@@ -18,12 +18,8 @@ clean:
 	rm -rf ./Objects/*.o $(EXECUTABLE)
 
 install:
-	su -c "mv $(EXECUTABLE) /usr/local/bin"
-	cp -R ./Languages /home/miziak/.linux-ip-changer
-
-reinstall:
-	rm -rf /usr/local/bin/$(EXECUTABLE)
 	mv $(EXECUTABLE) /usr/local/bin
+	cp -R ./Languages /home/miziak/.linux-ip-changer
 
 uninstall:
 	rm -rf /usr/local/bin/$(EXECUTABLE)
