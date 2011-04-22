@@ -19,7 +19,10 @@ Changelog:
    Added multi-lenguage mode(languages files in ~/.linux-ip-changer/Languages)<br>
    ip-changer must be installed(make install).
 
- - Version Actual 1.5 dzeta
+ - Version 1.5 dzeta
    Updater(Check installed version with version in server if is lower display dialog with link to download),<br>
    Support Client 8.71,<br>
    Change in GUI(many tibia process support)
+
+ - Version Actual 1.6 eta
+   Support Client 8.72
